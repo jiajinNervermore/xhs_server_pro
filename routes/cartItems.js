@@ -21,6 +21,7 @@ router.get("/cart", (req, res) => {
     // console.log(result);
     // 判断result是否为0 是则说明该用户购物车里没有商品，否则，说明有再根据查询到的商品编号，去商品表查询相应的商品信息，返回到前端
     if (result.length == 0) {
+      res.set('Access-Control-Allow-Orign','*')
       res.send({ code: 0, msg: '购物车是空的' })
       return;
     } else {
@@ -46,6 +47,7 @@ router.get("/cart", (req, res) => {
             // 将购物车表里的数量强行赋值到返回数组对象里
             cartList[i].count=lids[i].count
             if (i == len - 1) {
+              res.set('Access-Control-Allow-Orign','*')
               res.send({ code: 1, msg: '查询成功', data: cartList })
             }
           })

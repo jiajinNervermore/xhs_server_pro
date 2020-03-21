@@ -19,8 +19,10 @@ router.get('/addcart',(req,res)=>{
   pool.query(sql,[obj],(err,result)=>{
     if(err)throw err;
     if(result.affectedRows>0){
+      res.set('Access-Control-Allow-Orign','*')
       res.send({code:1,msg:'添加成功'})
     }else{
+      res.set('Access-Control-Allow-Orign','*')
       res.send({code:-1,msg:'添加失败'})
     }
   })

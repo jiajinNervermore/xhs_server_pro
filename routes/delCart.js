@@ -14,8 +14,10 @@ router.get('/delCart',(req,res)=>{
         if(err) throw err;
         if(i==len-1){
           if(result.affectedRows>0){
+            res.set('Access-Control-Allow-Orign','*')
             res.send({code:1,msg:"删除成功"})
           }else{
+            res.set('Access-Control-Allow-Orign','*')
             res.send({code:-1,msg:'删除失败'})
           }
         }

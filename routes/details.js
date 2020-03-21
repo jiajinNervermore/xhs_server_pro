@@ -13,8 +13,10 @@ router.get("/details",(req,res)=>{
     if(err)throw err;
     // console.log(result)
     if(result.length==0){
+      res.set('Access-Control-Allow-Orign','*')
       res.send({code:-1,msg:"没有找到相关信息"});
     }else{
+      res.set('Access-Control-Allow-Orign','*')
       res.send(result)
     }
   })

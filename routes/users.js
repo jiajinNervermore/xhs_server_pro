@@ -23,6 +23,7 @@ router.get("/signin", (req, res) => {
           err && console.log(err);
           // console.log(result)
           if (result.affectedRows > 0) {
+            res.set('Access-Control-Allow-Orign','*')
             res.send({ code: 1, result, obj })
           }
         })
@@ -38,9 +39,11 @@ router.get("/signin", (req, res) => {
         pool.query(sql, [verification, obj.phone], (err, result) => {
           if (err) throw err;
           if (result.affectedRows > 0) {
+            res.set('Access-Control-Allow-Orign','*')
             res.send({ code: 1, result, obj:{'verification_code':verification} })
             // console.log(verification)
           } else {
+            res.set('Access-Control-Allow-Orign','*')
             res.send({ code: 0, msg: "请重新发送..." })
           }
         })
