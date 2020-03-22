@@ -23,7 +23,7 @@ var delCarts = require('./routes/delCart')
 
 //配置跨域模块
 server.use(cors({
-  origin: ["http://127.0.0.1:8080", "http://localhost:8080","http://xhshh.applinzi.com"],
+  origin: ["http://127.0.0.1:8080", "http://localhost:8080","http://xhshh.applinzi.com","http://2.xhshh.applinzi.com"],
   credentials: true
 }))
 //指定静态资源目录 public
